@@ -1,3 +1,4 @@
+const path = require("path");
 require("dotenv").config();
 const {
   NODE_ENV = "development",
@@ -14,10 +15,10 @@ module.exports = {
     client: "postgresql",
     connection: URL,
     migrations: {
-      directory: __dirname + "/src/db/migrations",
+      directory: path.join(__dirname, "src", "db", "migrations"),
     },
     seeds: {
-      directory: __dirname + "/src/db/seeds",
+      directory: path.join(__dirname, "src", "db", "seeds"),
     },
   },
 
@@ -25,10 +26,10 @@ module.exports = {
     client: "postgresql",
     connection: URL,
     migrations: {
-      directory: __dirname + "/db/migrations",
+      directory: path.join(__dirname, "src", "db", "migrations"),
     },
     seeds: {
-      directory: __dirname + "/db/seeds",
+      directory: path.join(__dirname, "src", "db", "seeds"),
     },
   },
 };
